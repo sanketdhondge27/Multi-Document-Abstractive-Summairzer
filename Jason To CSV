@@ -1,1 +1,18 @@
+import pandas as pd
+
+data = '['
+with open("C:/Users/Sanky27/Downloads/aylien-covid-news.jsonl") as f:
+      for index,line in enumerate(f):
+        print(index,line)
+        if(index==5000):
+          break
+        data = data+line+','
+data = data[:-1]+']'
+print(data)
+f1 = open('C:/Users/Sanky27/Downloads/covid.json', 'w')
+f1.write(data)
+
+df = pd.read_json (r'C:/Users/Sanky27/Downloads/covid.json')
+print(df.head(10))
+df.to_csv (r'C:/Users/Sanky27/Downloads/covid.csv')
 
