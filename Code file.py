@@ -12,14 +12,14 @@ import sys
 df = pd.read_csv('C:\\Users\\Sanky27\\OneDrive\\Desktop\\COVIDNEW.csv')
 sys.getrecursionlimit()
 
-# we are extracting all th words from each sentence then we are defining the tag of each word
+# extracting all th words from each sentence to define the tags of each word
 def tag(sentence):
     words = word_tokenize(sentence)
     words = pos_tag(words)
     return words
 
 
-# we are selecting words having pos tag as noun,verb and adjective
+# selecting words having pos tag as noun,verb and adjective
 def paraphraseable(tag):
     return tag.startswith('NN') or tag == 'VB' or tag.startswith('JJ')
 
@@ -64,7 +64,6 @@ def listToString(s):
     return (str1.join(s))
 
 
-#
 def abstractive_summary(text):
     new_sentence = []
 
